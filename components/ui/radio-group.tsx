@@ -10,7 +10,7 @@ import { ElementRef, ComponentPropsWithoutRef } from "../../lib/type-utils.ts"
 const RadioGroup = React.forwardRef<
   ElementRef<typeof AltRadioGroupPrimitive.Root>,
   ComponentPropsWithoutRef<typeof AltRadioGroupPrimitive.Root>
->(({ class:className, ...props }, ref) => {
+>(({ className, ...props }, ref) => {
   return (
     <RadioGroupPrimitive.Root
       className={cn("grid gap-2", className)}
@@ -24,7 +24,7 @@ RadioGroup.displayName = RadioGroupPrimitive.Root.displayName
 const RadioGroupItem = React.forwardRef<
   ElementRef<typeof AltRadioGroupPrimitive.Item>,
   ComponentPropsWithoutRef<typeof AltRadioGroupPrimitive.Item>
->(({ class:className, children, ...props }, ref) => {
+>(({ className, children, ...props }, ref) => {
   return (
     <RadioGroupPrimitive.Item
       ref={ref}

@@ -16,7 +16,7 @@ const TooltipTrigger = TooltipPrimitive.Trigger
 const TooltipContent = React.forwardRef<
   ElementRef<typeof AlitTooltipPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AlitTooltipPrimitive.Content>
->(({ class:className, sideOffset = 4, ...props }, ref) => (
+>(({ className, sideOffset = 4, ...props }, ref) => (
   <TooltipPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}

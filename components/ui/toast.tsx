@@ -12,7 +12,7 @@ const ToastProvider = ToastPrimitives.Provider
 const ToastViewport = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Viewport>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Viewport>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitives.Viewport
     ref={ref}
     className={cn(
@@ -44,7 +44,7 @@ const Toast = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Root>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Root> &
     VariantProps<typeof toastVariants>
->(({ class:className, variant, ...props }, ref) => {
+>(({ className, variant, ...props }, ref) => {
   return (
     <ToastPrimitives.Root
       ref={ref}
@@ -58,7 +58,7 @@ Toast.displayName = ToastPrimitives.Root.displayName
 const ToastAction = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Action>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Action>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
@@ -73,7 +73,7 @@ ToastAction.displayName = ToastPrimitives.Action.displayName
 const ToastClose = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Close>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Close>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitives.Close
     ref={ref}
     className={cn(
@@ -91,7 +91,7 @@ ToastClose.displayName = ToastPrimitives.Close.displayName
 const ToastTitle = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Title>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Title>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
     className={cn("text-sm font-semibold", className)}
@@ -103,7 +103,7 @@ ToastTitle.displayName = ToastPrimitives.Title.displayName
 const ToastDescription = React.forwardRef<
   ElementRef<typeof AltToastPrimitives.Description>,
   ComponentPropsWithoutRef<typeof AltToastPrimitives.Description>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
     className={cn("text-sm opacity-90", className)}

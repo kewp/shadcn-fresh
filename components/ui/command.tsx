@@ -15,7 +15,7 @@ import { Dialog, DialogContent } from './dialog.tsx'
 const Command = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <CommandPrimitive
     ref={ref}
     className={cn(
@@ -23,11 +23,11 @@ const Command = React.forwardRef<
       className
     )}
     //somehow a variant "aria-selected:" in CommandItem does not work. Thus, define style here. (nikogoli)
-    children={!children ? children : ( 
+    children={!children ? children : (
       <React.Fragment>
         {children}
         <style>{`
-          .aria-selected\\:bg-accent[aria-selected=true] { background-color: hsl(var(--accent)) } 
+          .aria-selected\\:bg-accent[aria-selected=true] { background-color: hsl(var(--accent)) }
           .aria-selected\\:text-accent-foreground[aria-selected=true] { color: hsl(var(--accent-foreground)) }
         `}</style>
       </React.Fragment>
@@ -55,7 +55,7 @@ const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
 const CommandInput = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive.Input>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive.Input>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <div class="flex items-center border-b px-3" cmdk-input-wrapper="">
     <IconSearch class="flex mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
@@ -74,7 +74,7 @@ CommandInput.displayName = CommandPrimitive.Input.displayName
 const CommandList = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive.List>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive.List>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CommandPrimitive.List
     ref={ref}
     className={cn('max-h-[300px] overflow-y-auto overflow-x-hidden', className)}
@@ -94,7 +94,7 @@ CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 const CommandGroup = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive.Group>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive.Group>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CommandPrimitive.Group
     ref={ref}
     className={cn(
@@ -110,7 +110,7 @@ CommandGroup.displayName = CommandPrimitive.Group.displayName
 const CommandSeparator = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive.Separator>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive.Separator>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator ref={ref} className={cn('-mx-1 h-px bg-border', className)} {...props} />
 ))
 CommandSeparator.displayName = CommandPrimitive.Separator.displayName
@@ -118,7 +118,7 @@ CommandSeparator.displayName = CommandPrimitive.Separator.displayName
 const CommandItem = React.forwardRef<
   ElementRef<typeof AltCommandPrimitive.Item>,
   ComponentPropsWithoutRef<typeof AltCommandPrimitive.Item>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CommandPrimitive.Item
     ref={ref}
     className={cn(
@@ -131,7 +131,7 @@ const CommandItem = React.forwardRef<
 
 CommandItem.displayName = CommandPrimitive.Item.displayName
 
-const CommandShortcut = ({ class:className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
+const CommandShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
   return <span class={cn('ml-auto text-xs tracking-widest text-muted-foreground', className)} {...props} />
 }
 CommandShortcut.displayName = 'CommandShortcut'

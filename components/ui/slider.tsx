@@ -10,7 +10,7 @@ import { ElementRef, ComponentPropsWithoutRef } from "../../lib/type-utils.ts"
 const Slider = React.forwardRef<
   ElementRef<typeof AltSliderPrimitive.Root>,
   ComponentPropsWithoutRef<typeof AltSliderPrimitive.Root>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <SliderPrimitive.Root
     ref={ref}
     className={cn('relative flex w-full touch-none select-none items-center', className)}

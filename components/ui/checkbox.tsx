@@ -8,7 +8,7 @@ import { ElementRef, ComponentPropsWithoutRef } from "../../lib/type-utils.ts"
 const Checkbox = React.forwardRef<
   ElementRef<typeof AltCheckboxPrimitive.Root>,
   ComponentPropsWithoutRef<typeof AltCheckboxPrimitive.Root>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <CheckboxPrimitive.Root
     ref={ref}
     className={cn(

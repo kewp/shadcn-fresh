@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils.ts'
 // deno-lint-ignore no-empty-interface
 export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {}
 
-const Input = React.forwardRef<HTMLInputElement, InputProps>(({ class:className, type, ...props }, ref) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
   return (
     <input
       type={type}

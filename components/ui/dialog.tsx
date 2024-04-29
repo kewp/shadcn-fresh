@@ -10,7 +10,7 @@ const Dialog = DialogPrimitive.Root
 const DialogTrigger = DialogPrimitive.Trigger
 
 
-const DialogPortal = ({ class:className, children, ...props }: AltDialogPrimitive.DialogPortalProps) => (
+const DialogPortal = ({ className, children, ...props }: AltDialogPrimitive.DialogPortalProps) => (
   <DialogPrimitive.Portal className={cn(className)} {...props}>
     <div className="fixed inset-0 z-50 flex items-start justify-center sm:items-center">{children}</div>
   </DialogPrimitive.Portal>
@@ -21,7 +21,7 @@ DialogPortal.displayName = DialogPrimitive.Portal.displayName
 const DialogOverlay = React.forwardRef<
   ElementRef<typeof AltDialogPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof AltDialogPrimitive.Overlay>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DialogPrimitive.Overlay
     ref={ref}
     className={cn(
@@ -37,7 +37,7 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 const DialogContent = React.forwardRef<
   ElementRef<typeof AltDialogPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AltDialogPrimitive.Content>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <DialogPortal>
     <DialogOverlay />
     <DialogPrimitive.Content
@@ -59,13 +59,13 @@ const DialogContent = React.forwardRef<
 DialogContent.displayName = DialogPrimitive.Content.displayName
 
 
-const DialogHeader = ({ class:className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+const DialogHeader = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className={cn('flex flex-col space-y-1.5 text-center sm:text-left', className)} {...props} />
 )
 DialogHeader.displayName = 'DialogHeader'
 
 
-const DialogFooter = ({ class:className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
+const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
   <div className={cn('flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2', className)} {...props} />
 )
 DialogFooter.displayName = 'DialogFooter'
@@ -74,7 +74,7 @@ DialogFooter.displayName = 'DialogFooter'
 const DialogTitle = React.forwardRef<
   ElementRef<typeof AltDialogPrimitive.Title>,
   ComponentPropsWithoutRef<typeof AltDialogPrimitive.Title>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
     ref={ref}
     className={cn('text-lg font-semibold leading-none tracking-tight', className)}
@@ -87,7 +87,7 @@ DialogTitle.displayName = DialogPrimitive.Title.displayName
 const DialogDescription = React.forwardRef<
   ElementRef<typeof AltDialogPrimitive.Description>,
   ComponentPropsWithoutRef<typeof AltDialogPrimitive.Description>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DialogPrimitive.Description ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
 ))
 DialogDescription.displayName = DialogPrimitive.Description.displayName

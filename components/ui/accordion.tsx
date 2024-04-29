@@ -10,7 +10,7 @@ const Accordion = AccordionPrimitive.Root
 const AccordionItem = React.forwardRef<
   ElementRef<typeof AltAccordionPrimitive.Item>,
   ComponentPropsWithoutRef<typeof AltAccordionPrimitive.Item>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item ref={ref} className={cn('border-b', className)} {...props} />
 ))
 AccordionItem.displayName = 'AccordionItem'
@@ -18,7 +18,7 @@ AccordionItem.displayName = 'AccordionItem'
 const AccordionTrigger = React.forwardRef<
   ElementRef<typeof AltAccordionPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof AltAccordionPrimitive.Trigger>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -38,7 +38,7 @@ AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
 const AccordionContent = React.forwardRef<
   ElementRef<typeof AltAccordionPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AltAccordionPrimitive.Content>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
     className={cn(

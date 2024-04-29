@@ -32,7 +32,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.SubTrigger> & {
     inset?: boolean
   }
->(({ class:className, inset, children, ...props }, ref) => (
+>(({ className, inset, children, ...props }, ref) => (
   <DropdownMenuPrimitive.SubTrigger
     ref={ref}
     className={cn(
@@ -52,7 +52,7 @@ DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayNam
 const DropdownMenuSubContent = React.forwardRef<
   ElementRef<typeof AltDropdownMenuPrimitive.SubContent>,
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.SubContent>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cn(
@@ -68,7 +68,7 @@ DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayNam
 const DropdownMenuContent = React.forwardRef<
   ElementRef<typeof AltDropdownMenuPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.Content>
->(({ class:className, sideOffset = 4, ...props }, ref) => (
+>(({ className, sideOffset = 4, ...props }, ref) => (
   <DropdownMenuPrimitive.Portal>
     <DropdownMenuPrimitive.Content
       ref={ref}
@@ -89,7 +89,7 @@ const DropdownMenuItem = React.forwardRef<
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.Item> & {
     inset?: boolean
   }
->(({ class:className, inset, ...props }, ref) => (
+>(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
@@ -106,7 +106,7 @@ DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName
 const DropdownMenuCheckboxItem = React.forwardRef<
   ElementRef<typeof AltDropdownMenuPrimitive.CheckboxItem>,
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.CheckboxItem>
->(({ class:className, children, checked, ...props }, ref) => (
+>(({ className, children, checked, ...props }, ref) => (
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
@@ -130,7 +130,7 @@ DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displa
 const DropdownMenuRadioItem = React.forwardRef<
   ElementRef<typeof AltDropdownMenuPrimitive.RadioItem>,
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.RadioItem>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
@@ -155,7 +155,7 @@ const DropdownMenuLabel = React.forwardRef<
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.Label> & {
     inset?: boolean
   }
->(({ class:className, inset, ...props }, ref) => (
+>(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={cn('px-2 py-1.5 text-sm font-semibold text-slate-900 dark:text-slate-300', inset && 'pl-8', className)}
@@ -168,7 +168,7 @@ DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName
 const DropdownMenuSeparator = React.forwardRef<
   ElementRef<typeof AltDropdownMenuPrimitive.Separator>,
   ComponentPropsWithoutRef<typeof AltDropdownMenuPrimitive.Separator>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
     className={cn('-mx-1 my-1 h-px bg-slate-100 dark:bg-slate-700', className)}
@@ -178,7 +178,7 @@ const DropdownMenuSeparator = React.forwardRef<
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName
 
 
-const DropdownMenuShortcut = ({ class:className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
+const DropdownMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => {
   return <span className={cn('ml-auto text-xs tracking-widest text-slate-500', className)} {...props} />
 }
 DropdownMenuShortcut.displayName = 'DropdownMenuShortcut'
