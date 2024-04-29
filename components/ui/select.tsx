@@ -15,7 +15,7 @@ const SelectValue = SelectPrimitive.Value
 const SelectTrigger = React.forwardRef<
   ElementRef<typeof AltSelectPrimitive.Trigger>,
   ComponentPropsWithoutRef<typeof AltSelectPrimitive.Trigger>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Trigger
     ref={ref}
     className={cn(
@@ -36,7 +36,7 @@ SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 const SelectContent = React.forwardRef<
   ElementRef<typeof AltSelectPrimitive.Content>,
   ComponentPropsWithoutRef<typeof AltSelectPrimitive.Content>
->(({ class:className, children, position = 'popper', ...props }, ref) => (
+>(({ className, children, position = 'popper', ...props }, ref) => (
   <SelectPrimitive.Portal>
     <SelectPrimitive.Content
       ref={ref}
@@ -66,7 +66,7 @@ SelectContent.displayName = SelectPrimitive.Content.displayName
 const SelectLabel = React.forwardRef<
   ElementRef<typeof AltSelectPrimitive.Label>,
   ComponentPropsWithoutRef<typeof AltSelectPrimitive.Label>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <SelectPrimitive.Label ref={ref} className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)} {...props} />
 ))
 SelectLabel.displayName = SelectPrimitive.Label.displayName
@@ -75,7 +75,7 @@ SelectLabel.displayName = SelectPrimitive.Label.displayName
 const SelectItem = React.forwardRef<
   ElementRef<typeof AltSelectPrimitive.Item>,
   ComponentPropsWithoutRef<typeof AltSelectPrimitive.Item>
->(({ class:className, children, ...props }, ref) => (
+>(({ className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
@@ -99,7 +99,7 @@ SelectItem.displayName = SelectPrimitive.Item.displayName
 const SelectSeparator = React.forwardRef<
   ElementRef<typeof AltSelectPrimitive.Separator>,
   ComponentPropsWithoutRef<typeof AltSelectPrimitive.Separator>
->(({ class:className, ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <SelectPrimitive.Separator ref={ref} className={cn('-mx-1 my-1 h-px bg-muted', className)} {...props} />
 ))
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName
